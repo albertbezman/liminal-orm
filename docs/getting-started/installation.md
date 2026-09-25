@@ -1,4 +1,4 @@
-Liminal supports Python versions 3.10 through 3.13.
+Liminal supports Python versions 3.10 through 3.14.
 
 Install Liminal via pip:
 
