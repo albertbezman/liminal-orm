@@ -99,4 +99,5 @@ target-version = "py310"
 
 [[tool.mypy.overrides]]
 module = ["sqlalchemy.*"]
+follow_imports = "skip"
 ignore_missing_imports = true
