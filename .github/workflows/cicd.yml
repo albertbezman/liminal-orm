@@ -91,6 +91,11 @@ jobs:
       - name: Run tests
         run: uv run --locked --python "${{ matrix.python-version }}" pytest liminal/
 
+      - name: Run tests with SQLAlchemy 1.4
+        run: |
+          uv pip install --python .venv/bin/python "sqlalchemy>=1.4.53,<2"
+          uv run --no-sync --python "${{ matrix.python-version }}" pytest liminal/
+
       - name: Download wheel
         uses: actions/download-artifact@v8
         with:
