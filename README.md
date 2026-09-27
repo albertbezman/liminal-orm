@@ -33,6 +33,7 @@ If you or your organization use Liminal, please consider adding yourself or your
 
 - [Overview](#liminal-orm)
 - [Getting Started](#getting-started)
+  - [Python and SQLAlchemy Versions](#python-and-sqlalchemy-versions)
   - [Toolkit](#toolkit)
 - [Mission](#mission)
 - [Community](#community)
@@ -47,6 +48,20 @@ If you or your organization use Liminal, please consider adding yourself or your
 Note: Liminal requires you to have (or have access to) an admin user account for your Benchling tenant. If you run into any issues, please reach out to us on the [Discussions](https://github.com/dynotx/liminal-orm/discussions/categories/q-a) forum and we'll be happy to help!
 
 Check out this [Quick Start Guide](https://dynotx.github.io/liminal-orm/getting-started/prerequisites/) to get you setup with Liminal!
+
+## [Python and SQLAlchemy Versions](#python-and-sqlalchemy-versions)
+
+Liminal supports Python 3.10 to 3.14 and SQLAlchemy 1.4, 2.0 and 2.1. Your package manager (pip, uv, Poetry) installs the newest versions that fit both Liminal's requirements and your project's own constraints. Some requirements change with your Python version:
+
+| Python | numpy | pandas | SQLAlchemy |
+| --- | --- | --- | --- |
+| 3.10 | 1.23.5+, below 2 | 1.5.3+, below 3 | 1.4 or 2.0 |
+| 3.11 | 1.23.5+, below 2 | 1.5.3+, below 4 | 1.4, 2.0 or 2.1 |
+| 3.12 | 1.26+, below 2 | 2.2+, below 4 | 1.4, 2.0 or 2.1 |
+| 3.13 | 2.1+, below 3 | 2.2.3+, below 4 | 1.4, 2.0 or 2.1 |
+| 3.14 | 2.3.3+, below 3 | 2.3.3+, below 4 | 1.4, 2.0 or 2.1 |
+
+If your project doesn't pin SQLAlchemy, you get the newest version allowed: 2.1 on Python 3.11+ and 2.0 on Python 3.10. To stay on SQLAlchemy 1.4, add `sqlalchemy<2` to your project's dependencies. On SQLAlchemy 2.x, `.df()` returns the same columns in a different order (schema fields first, then system columns).
 
 ## [Toolkit](#toolkit)
 
