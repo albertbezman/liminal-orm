@@ -70,9 +70,8 @@ def test_base_model_queries_support_declared_dependency_versions() -> None:
         ]
         dataframe = CompatibilityEntity.df(session)
 
+    notes_by_id = dataframe.set_index("id")["notes"]
     assert all_entity_ids == {"active_id", "archived_id"}
     assert active_entity_creators == [("active_id", "Example User")]
-    assert dataframe.set_index("id")["notes"].to_dict() == {
-        "active_id": "example notes",
-        "archived_id": None,
-    }
+    assert notes_by_id["active_id"] == "example notes"
+    assert notes_by_id.isna().to_dict() == {"active_id": False, "archived_id": True}
