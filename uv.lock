@@ -781,7 +781,7 @@ requires-dist = [
     { name = "pydantic", specifier = ">=2,<=2.13" },
     { name = "requests", specifier = ">=2.32.3,<3" },
     { name = "rich", specifier = ">=13.9.2,<14" },
-    { name = "sqlalchemy", specifier = ">=1.4.53,<2.1" },
+    { name = "sqlalchemy", specifier = ">=1.4.53,<2.2" },
     { name = "tenacity", specifier = ">=8,<10" },
     { name = "tornado", specifier = "==6.5.0" },
     { name = "typer", specifier = ">=0.12.5,<0.13" },
